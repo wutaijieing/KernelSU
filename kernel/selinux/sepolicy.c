@@ -646,7 +646,7 @@ static bool add_type(struct policydb *db, const char *type_name, bool attr)
 	}
 
 	db->type_attr_map_array = new_type_attr_map_array;
-	ebitmap_init(&db->type_attr_map_array[value - 1]);
+	ebitmap_init(&db->type_attr_map_array[value - 1], HKIP_SELINUX_EBITMAP_RO);
 	ebitmap_set_bit(&db->type_attr_map_array[value - 1], value - 1, 1);
 
 	db->type_val_to_struct = new_type_val_to_struct;
